@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{REQUEST_URI} !^/pitiviti\.org/public
+
+    RewriteRule ^(.*)$ pitiviti.org/public/$1 [L]
+</IfModule>
+
+Options -Indexes
+
+<FilesMatch "(^\.|composer\.json|composer\.lock|\.env|README|readme|phpunit|artisan)">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_autoindex.c>
+    IndexIgnore *
+</IfModule>
+
+<DirectoryMatch "^(.*)/(app|config|storage|vendor)/">
+    Require all denied
+</DirectoryMatch>
